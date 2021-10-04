@@ -107,7 +107,10 @@ func RouterDefault(ctx *gin.Context) {
 	}
 
 	//
-	execController.Prepare(ctx)
+	errPrepare := execController.Prepare(ctx)
+	if errPrepare != nil {
+		return
+	}
 	//
 
 	ctlValue := reflect.ValueOf(execController)
