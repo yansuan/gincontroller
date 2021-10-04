@@ -1,0 +1,2 @@
+# gincontroller
+gin struct controller
